@@ -43,6 +43,9 @@ COPY bin-0.2.0.tar.gz /
 
 RUN tar -xzvf bin-0.2.0.tar.gz -C /ravendark
 
+RUN mv /ravendark/bin/ravendarkd /ravendark/ravendarkd
+RUN mv /ravendark/bin/ravendark-cli /ravendark/ravendark-cli
+
 RUN apt-get autoclean && \
   apt-get autoremove -y
 
@@ -64,9 +67,12 @@ RUN cd ~ && \
   ./venv/bin/pip install -r requirements.txt && \
   echo "* * * * *    root    cd /root/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" >> /etc/crontab
 
+WORKDIR /ravendark
+
+COPY entrypoint.sh ./entrypoint.sh
+RUN chmod +x entrypoint.sh
+
 #6666 is p2p
 EXPOSE 6666
 
-WORKDIR /ravendark
-
-CMD ravendarkd --daemon -datadir=/root/data
+ENTRYPOINT ["./entrypoint.sh"]
