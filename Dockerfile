@@ -39,20 +39,15 @@ RUN apt-get install -y \
 
 RUN mkdir /ravendark
 
-COPY bin-0.2.0.tar.gz /
+RUN wget -qO- https://github.com/raven-dark/bins/raw/master/raven-dark-0.2.0-ubuntu-rc1.tar.gz | tar xvz -C /ravendark
 
-RUN tar -xzvf bin-0.2.0.tar.gz -C /ravendark
-
-RUN mv /ravendark/bin/ravendarkd /ravendark/ravendarkd
-RUN mv /ravendark/bin/ravendark-cli /ravendark/ravendark-cli
+RUN chmod +x /ravendark/ravendarkd
+RUN chmod +x /ravendark/ravendark-cli
 
 RUN apt-get autoclean && \
   apt-get autoremove -y
 
 COPY ravendark.conf /root/data/ravendark.conf
-
-RUN chmod +x /ravendark/ravendarkd
-RUN chmod +x /ravendark/ravendark-cli
 
 RUN mkdir -p /root/data
 
