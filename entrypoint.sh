@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./ravendarkd -daemon -datadir=/root/data
+./ravendarkd -daemon -datadir=/root/data -conf=/root/conf/ravendark.conf
 
 touch /root/data/debug.log
 

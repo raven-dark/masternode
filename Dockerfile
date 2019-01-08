@@ -47,9 +47,10 @@ RUN chmod +x /ravendark/ravendark-cli
 RUN apt-get autoclean && \
   apt-get autoremove -y
 
-COPY ravendark.conf /root/data/ravendark.conf
-
 RUN mkdir -p /root/data
+RUN mkdir -p /root/conf
+
+COPY ravendark.conf /root/conf/ravendark.conf
 
 VOLUME /root/data
 
