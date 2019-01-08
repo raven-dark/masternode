@@ -53,6 +53,12 @@ externalip=your.ip.goes.here:6666
 `sudo docker run -p 6666:6666 -v ~/data:/root/data -d --name ravendark-mn ravendark-mn:latest`
 
 
+## Monitor
+
+To watch the logs of the new masternode docker container
+
+`sudo docker logs --tail 100 -f ravendark-mn`
+
 
 ### Update local desktop wallet
 You'll then want to go to your desktop wallet, go to the settings tab on the right at the bottom and click "Open Masternod Configuration File".
