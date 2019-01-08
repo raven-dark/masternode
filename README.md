@@ -66,3 +66,13 @@ You'll then want to go to your desktop wallet, go to the settings tab on the rig
 Enter a line like the example.
 
 `mn1 your.ip.goes.here:6666 master-node-private-key collateral-transaction-id transaction-index`
+
+
+
+### Windows
+
+The above should work but has not been tested. You will have to omit `sudo` from all commands. Follow the [Docker for Windows](https://docs.docker.com/docker-for-windows/) guide to get started. Make sure port `6666` is forwarded from your router to the computer you're running the masternode on.
+
+### macOS
+
+The above should work but has not been tested. You will have to omit `sudo` from all commands. Follow the [Docker for Mac](https://docs.docker.com/docker-for-mac/) guide to get started. Make sure port `6666` is forwarded from your router to the computer you're running the masternode on.
