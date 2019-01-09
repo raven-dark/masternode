@@ -100,4 +100,5 @@ once you're in the container, to check the masternode status:
 other helpful commands:
 
 `./ravendark-cli --conf=/root/data/ravendark.conf mnsync status`
+
 `./ravendark-cli --conf=/root/data/ravendark.conf mnsync reset`
