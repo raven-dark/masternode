@@ -61,7 +61,7 @@ To watch the logs of the new masternode docker container
 
 
 ### Update local desktop wallet
-You'll then want to go to your desktop wallet, go to the settings tab on the right at the bottom and click "Open Masternod Configuration File".
+You'll then want to go to your desktop wallet, go to the settings tab on the right at the bottom and click "Open Masternode Configuration File".
 
 Enter a line like the example.
 
@@ -76,3 +76,28 @@ The above should work but has not been tested. You will have to omit `sudo` from
 ### macOS
 
 The above should work but has not been tested. You will have to omit `sudo` from all commands. Follow the [Docker for Mac](https://docs.docker.com/docker-for-mac/) guide to get started. Make sure port `6666` is forwarded from your router to the computer you're running the masternode on.
+
+
+
+## Troubleshooting
+
+First, please be patient, starting a masternode takes time. But if you are having trouble, here are some tips.
+
+To restart the docker container.
+
+`sudo docker restart ravendark-mn`
+
+Most of the time you just have to wait, or maybe restart the docker container. If your node goes from `PRE_ENABLED` to `EXPIRED` or `NEW_START_REQUIRED` a few times, maybe try the steps below.
+
+to get into the docker container running the node:
+
+`sudo docker exec -it xrd-mn /bin/bash`
+
+once you're in the container, to check the masternode status:
+
+`./ravendark-cli --conf=/root/data/ravendark.conf masternode status`
+
+other helpful commands:
+
+`./ravendark-cli --conf=/root/data/ravendark.conf mnsync status`
+`./ravendark-cli --conf=/root/data/ravendark.conf mnsync reset`
