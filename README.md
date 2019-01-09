@@ -60,7 +60,7 @@ To watch the logs of the new masternode docker container
 `sudo docker logs --tail 100 -f ravendark-mn`
 
 
-### Update local desktop wallet
+## Update local desktop wallet
 You'll then want to go to your desktop wallet, go to the settings tab on the right at the bottom and click "Open Masternode Configuration File".
 
 Enter a line like the example.
@@ -91,7 +91,7 @@ Most of the time you just have to wait, or maybe restart the docker container. I
 
 to get into the docker container running the node:
 
-`sudo docker exec -it xrd-mn /bin/bash`
+`sudo docker exec -it ravendark-mn /bin/bash`
 
 once you're in the container, to check the masternode status:
 
