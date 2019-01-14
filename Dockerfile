@@ -39,7 +39,7 @@ RUN apt-get install -y \
 
 RUN mkdir /ravendark
 
-RUN wget -qO- https://github.com/raven-dark/bins/raw/master/raven-dark-0.2.0-ubuntu-rc1.tar.gz | tar xvz -C /ravendark
+RUN wget -qO- https://github.com/raven-dark/bins/raw/master/raven-dark-0.2.1-ubuntu-rc2.tar.gz | tar xvz -C /ravendark
 
 RUN chmod +x /ravendark/ravendarkd
 RUN chmod +x /ravendark/ravendark-cli
