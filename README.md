@@ -95,10 +95,10 @@ to get into the docker container running the node:
 
 once you're in the container, to check the masternode status:
 
-`./ravendark-cli --conf=/root/data/ravendark.conf masternode status`
+`./ravendark-cli --conf=/root/conf/ravendark.conf masternode status`
 
 other helpful commands:
 
-`./ravendark-cli --conf=/root/data/ravendark.conf mnsync status`
+`./ravendark-cli --conf=/root/conf/ravendark.conf mnsync status`
 
-`./ravendark-cli --conf=/root/data/ravendark.conf mnsync reset`
+`./ravendark-cli --conf=/root/conf/ravendark.conf mnsync reset`
