@@ -39,7 +39,7 @@ RUN apt-get install -y \
 
 RUN mkdir /ravendark
 
-RUN wget -qO- https://github.com/raven-dark/bins/raw/master/raven-dark-0.2.0-ubuntu-rc1.tar.gz | tar xvz -C /ravendark
+RUN wget -qO- https://github.com/raven-dark/raven-dark/releases/download/0.3.0/ravendark-0.3.0-ubuntu-14.04.tar.gz | tar xvz -C /ravendark
 
 RUN chmod +x /ravendark/ravendarkd
 RUN chmod +x /ravendark/ravendark-cli
@@ -55,6 +55,9 @@ COPY ravendark.conf /root/conf/ravendark.conf
 VOLUME /root/data
 
 # sentinel
+RUN add-apt-repository ppa:jonathonf/python-3.6
+RUN apt-get update
+RUN apt-get install python3.6 -y
 RUN apt-get install python3-pip -y;
 RUN pip3 install virtualenv;
 RUN cd ~ && \
