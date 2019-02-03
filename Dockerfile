@@ -55,6 +55,7 @@ COPY ravendark.conf /root/conf/ravendark.conf
 VOLUME /root/data
 
 # sentinel
+ENV ENVIR=docker
 RUN add-apt-repository ppa:jonathonf/python-3.6
 RUN apt-get update
 RUN apt-get install python3.6 -y
