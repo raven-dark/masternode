@@ -51,7 +51,7 @@ RUN apt-get autoclean && \
 
 RUN mkdir -p /root/data
 RUN mkdir -p /root/conf
-RUN echo 1
+
 COPY ravendark.conf /root/conf/ravendark.conf
 
 VOLUME /root/data
