@@ -1,5 +1,7 @@
 FROM ubuntu:trusty
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 RUN apt-get update && apt-get install -y \
   libzmq3-dev \
   libzmq3-dbg \
@@ -49,7 +51,7 @@ RUN apt-get autoclean && \
 
 RUN mkdir -p /root/data
 RUN mkdir -p /root/conf
-
+RUN echo 1
 COPY ravendark.conf /root/conf/ravendark.conf
 
 VOLUME /root/data
