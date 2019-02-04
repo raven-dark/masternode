@@ -16,7 +16,7 @@ edit the `ravendark.conf` file and fill in your info.
 
 (if you need help with `vi` google "how to use vim")
 
-copy and paste your private key in place of `private-key-goes-here`, change your password and enter your ip address in place of `your.ip.goes.here`.
+copy and paste your private key in place of `private-key-goes-here`, change your password and enter your ip address in place of `your.ip.goes.here`. create a password and put in place of `change-this-letters-and-numbers-only`. NOTE: don't use special characters in your password, the sentinel will break.
 
 push `esc` to stop editing, then type `:wq` to write the file and quit the editor.
 
@@ -39,7 +39,7 @@ zmqpubrawtxlock=tcp://127.0.0.1:28332
 zmqpubhashblock=tcp://127.0.0.1:28332
 rpcallowip=127.0.0.1
 rpcuser=ravendark
-rpcpassword=change-this
+rpcpassword=change-this-letters-and-numbers-only
 bind=0.0.0.0
 externalip=your.ip.goes.here:6666
 ```
