@@ -46,6 +46,9 @@ RUN wget -qO- https://github.com/raven-dark/raven-dark/releases/download/0.3.1/r
 RUN chmod +x /ravendark/ravendarkd
 RUN chmod +x /ravendark/ravendark-cli
 
+RUN ln -sf /ravendark/ravendarkd /usr/bin/ravendarkd
+RUN ln -sf /ravendark/ravendark-cli /usr/bin/ravendark-cli
+
 RUN apt-get autoclean && \
   apt-get autoremove -y
 
@@ -68,7 +71,8 @@ RUN cd ~ && \
   git clone https://github.com/raven-dark/sentinel.git && cd sentinel && mkdir database && \
   virtualenv ./venv && \
   ./venv/bin/pip install -r requirements.txt && \
-  echo "* * * * *    root    cd /root/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" >> /etc/crontab
+  echo "* * * * *    root    cd /root/sentinel && ./venv/bin/python bin/sentinel.py >> /var/log/sentinel.log 2>&1" >> /etc/crontab && \
+  sed -i -e '9iENVIR=docker\' /etc/crontab
 
 WORKDIR /ravendark
 
