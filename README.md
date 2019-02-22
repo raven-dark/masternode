@@ -6,7 +6,7 @@ copy and paste:
 
 `sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common vim && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && sudo apt-get update && sudo apt-get install -y docker-ce`
 
-if you're on aws, using ubuntu and your instance has less than 2gb of ram, make a bigger sawl file. copy and paste:
+if you're on aws, using ubuntu and your instance has less than 2gb of ram, make a bigger sawp file. copy and paste:
 
 ```
 sudo dd if=/dev/zero of=swapfile bs=1M count=3000 && \
