@@ -63,7 +63,7 @@ VOLUME /root/data
 ENV ENVIR=docker
 RUN add-apt-repository ppa:jonathonf/python-3.6
 RUN apt-get update
-RUN apt-get install sqlite3 libsqlite3-dev
+RUN apt-get install sqlite3 libsqlite3-dev -y
 RUN apt-get install python3.6 -y
 RUN apt-get install python3-pip -y;
 RUN pip3 install virtualenv;
