@@ -41,7 +41,7 @@ RUN apt-get install -y \
 
 RUN mkdir /ravendark
 
-RUN wget -qO- https://github.com/raven-dark/raven-dark/releases/download/0.3.1/ravendark-0.3.1-ubuntu-14.04.tar.gz | tar xvz -C /ravendark
+RUN wget -qO- https://github.com/raven-dark/raven-dark/releases/download/0.4.1/ravendarkd-v0.4.1-ubuntu-14.04.tar.gz | tar xvz -C /ravendark
 
 RUN chmod +x /ravendark/ravendarkd
 RUN chmod +x /ravendark/ravendark-cli
